@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+         version="4.0">
+    <display-name>jspServlet</display-name>
+    <servlet>
+        <servlet-name>jspServlet</servlet-name>
+        <servlet-class>com.company.controller.Main</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>jspServlet</servlet-name>
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
+    <filter>
+        <filter-name>SetCharEncoding</filter-name>
+        <filter-class>org.apache.catalina.filters.SetCharacterEncodingFilter</filter-class>
+        <init-param>
+            <param-name>encoding</param-name>
+            <param-value>utf-8</param-value>
+        </init-param>
+    </filter>
+    <filter-mapping>
+        <filter-name>SetCharEncoding</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+    <servlet-mapping>
+        <servlet-name>default</servlet-name>
+        <url-pattern>*.js</url-pattern>
+        <url-pattern>*.css</url-pattern>
+        <url-pattern>*.jpg</url-pattern>
+        <url-pattern>*.png</url-pattern>
+        <url-pattern>*.gig</url-pattern>
+        <url-pattern>*.webp</url-pattern>
+        <url-pattern>*.mp4</url-pattern>
+        <url-pattern>*.mp3</url-pattern>
+        <url-pattern>*.ogg</url-pattern>
+        <url-pattern>*.ogv</url-pattern>
+        <url-pattern>*.wav</url-pattern>
+        <url-pattern>*.webm</url-pattern>
+    </servlet-mapping>
+</web-app>
